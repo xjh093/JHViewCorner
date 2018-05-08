@@ -50,8 +50,8 @@
         maskView.image = image;
         [self addSubview:maskView];
         [self setMaskView:maskView];
-        
-        if (highlightedColor) {
+
+        if ([self colorJudge:highlightedColor]) {
             UIImageView *highlightedImageView = [[UIImageView alloc] init];
             highlightedImageView.frame = maskView.frame;
             highlightedImageView.image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
@@ -95,13 +95,7 @@
 #pragma mark - private
 
 - (UIImage *)imageWithCornerRadius:(CGFloat)radius color:(UIColor *)color rectCorner:(UIRectCorner)corner{
-    if (color == nil) {
-        return nil;
-    }
-    
-    CGFloat a;
-    [color getRed:NULL green:NULL blue:NULL alpha:&a];
-    if (a < 1.0) {
+    if (![self colorJudge:color]) {
         return nil;
     }
     
@@ -126,13 +120,8 @@
 }
 
 - (UIImage *)imageWithCornerRadius:(CGFloat)radius color:(UIColor *)color rectCorner:(UIRectCorner)corner borderColor:(UIColor *)borderColor borderWidth:(CGFloat)width{
-    if (color == nil) {
-        return nil;
-    }
-    
-    CGFloat a;
-    [color getRed:NULL green:NULL blue:NULL alpha:&a];
-    if (a < 1.0) {
+
+    if (![self colorJudge:color]) {
         return nil;
     }
     
@@ -152,7 +141,7 @@
     CGContextDrawPath(context, kCGPath);
     
     // border
-    if (borderColor && width > 0) {
+    if ([self colorJudge:borderColor] && width > 0) {
         [borderColor set];
         CGRect innerBounds = CGRectInset(smallRect, width, width);
         UIBezierPath *roundIn = [UIBezierPath bezierPathWithRoundedRect:innerBounds cornerRadius:radius];
@@ -165,6 +154,21 @@
     UIGraphicsEndImageContext();
     
     return image;
+}
+
+- (BOOL)colorJudge:(UIColor *)color
+{
+    if (color == nil) {
+        return NO;
+    }
+    
+    CGFloat a;
+    [color getRed:NULL green:NULL blue:NULL alpha:&a];
+    if (a < 1.0) {
+        return NO;
+    }
+    
+    return YES;
 }
 
 - (void)setMaskView:(UIImageView *)imageView{
