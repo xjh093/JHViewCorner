@@ -1,7 +1,7 @@
 # UIView-JHViewCorner
 Set view's corner with one code! & 1 行代码设置圆角
 
-### Logs
+### Logs:
 
 2.update. (2018-5-8)
 
