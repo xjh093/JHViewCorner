@@ -1,6 +1,13 @@
 # UIView-JHViewCorner
-Set view's corner with one code!
+Set view's corner with one code! & 1 行代码设置圆角
 
+### Logs
+
+2.update. (2018-5-8)
+
+1.upload. (2018-5-7)
+
+---
 
 .h
 
