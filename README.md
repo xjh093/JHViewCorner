@@ -3,6 +3,8 @@ Set view's corner with one code! & 1 行代码设置圆角
 
 ### Logs:
 
+3.add heart mask. (2018-5-25)
+
 2.update. (2018-5-8)
 
 1.upload. (2018-5-7)
