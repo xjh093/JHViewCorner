@@ -68,7 +68,7 @@
 - (void)jh_setHeartMask:(UIColor *)color highlightedColor:(UIColor *)highlightedColor;
 
 /** 
- This method will generate a heart imageView as a mask if 'color' is not nil and its alpha is 1.0.
+ This method will generate a heart imageView as a mask if 'color' is not nil and its alpha is 1.0. Did not implement yet.
  
  @param color normal color.
  @param borderColor borderColor.
