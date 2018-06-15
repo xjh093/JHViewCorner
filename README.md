@@ -1,7 +1,41 @@
 # UIView-JHViewCorner
 Set view's corner with one code! & 1 行代码设置圆角
 
-### Logs:
+## What is it?
+
+![image](https://github.com/xjh093/UIView-JHViewCorner/blob/master/JHViewCorner/Images/image1.png)
+
+![image](https://github.com/xjh093/UIView-JHViewCorner/blob/master/JHViewCorner/Images/image2.png)
+
+## Notice
+
+If you use it in "UITableViewCell"
+
+you should override the blow methods:
+
+```
+
+// you have a image like this:
+[_image1 jh_setCornerRadius:H*0.5
+                      color:self.contentView.backgroundColor
+                 rectCorner:UIRectCornerAllCorners
+           highlightedColor:UIColorFromRGB(0xd9d9d9)];
+
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+    [super setSelected:selected animated:animated];
+
+    _image1.jh_highlightedMaskView.hidden = !selected;
+}
+
+- (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated{
+    [super setHighlighted:highlighted animated:animated];
+
+    _image1.jh_highlightedMaskView.hidden = !highlighted;
+}
+
+```
+
+## Logs:
 
 #### 4.add heart border mask. (2018-6-15)
 
@@ -13,7 +47,7 @@ Set view's corner with one code! & 1 行代码设置圆角
 
 ---
 
-.h
+## API
 
 ```
 @interface UIView (JHViewCorner)
@@ -37,6 +71,7 @@ Set view's corner with one code! & 1 行代码设置圆角
 @end
 ```
 
+## Something About More
 ## CGPathDrawingMode
 
 ![image](https://github.com/xjh093/UIView-JHViewCorner/blob/master/JHViewCorner/Images/%E5%9C%86%E8%A7%92.png)
