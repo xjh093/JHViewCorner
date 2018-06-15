@@ -3,11 +3,13 @@ Set view's corner with one code! & 1 行代码设置圆角
 
 ### Logs:
 
-3.add heart mask. (2018-5-25)
+#### 4.add heart border mask. (2018-6-15)
 
-2.update. (2018-5-8)
+#### 3.add heart mask. (2018-5-25)
 
-1.upload. (2018-5-7)
+#### 2.update. (2018-5-8)
+
+#### 1.upload. (2018-5-7)
 
 ---
 
@@ -25,6 +27,12 @@ Set view's corner with one code! & 1 行代码设置圆角
 
 /// Default is hidden.
 @property (nonatomic,  strong,  readonly) UIImageView *jh_highlightedMaskView;
+
+- (void)jh_setHeartMask:(UIColor *)color highlightedColor:(UIColor *)highlightedColor;
+
+- (void)jh_setHeartMask:(UIColor *)color borderColor:(UIColor *)borderColor borderWidth:(CGFloat)width highlightedColor:(UIColor *)highlightedColor;
+
+@property (nonatomic,  strong,  readonly) UIImageView *jh_heartBorderMaskView;
 
 @end
 ```
