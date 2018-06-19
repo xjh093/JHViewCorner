@@ -74,10 +74,6 @@
     return [self getHighlightedMaskView];
 }
 
-- (UIImageView *)jh_heartBorderMaskView{
-    return [self getHeartBorderMaskView];
-}
-
 - (void)jh_setHeartMask:(UIColor *)color highlightedColor:(UIColor *)highlightedColor{
     UIImage *image = [self heartImageWithColor:color offset:0];
     if (image) {
@@ -92,20 +88,44 @@
 
 - (void)jh_setHeartMask:(UIColor *)color borderColor:(UIColor *)borderColor borderWidth:(CGFloat)width highlightedColor:(UIColor *)highlightedColor{
     UIImage *image = [self heartImageWithColor:color offset:0];
-    if (image) {
-        [self addMaskImage:image offset:0];
-    }
     
     UIImage *highlightedImage = [self heartImageWithColor:highlightedColor offset:0];
-    if (highlightedImage) {
-        [self addHighlightedMaskImage:highlightedImage offset:0];
-    }
+    
+    UIImage *borderImage;
     
     // border
     if (width > 0) {
-        UIImage *borderImage = [self heartImageWithColor:borderColor offset:width];
-        if (borderImage) {
-            [self addHeartBorderMaskImage:borderImage offset:0];
+        borderImage = [self heartImageWithColor:borderColor offset:width];
+    }
+    
+    if (borderImage) {
+        CGFloat scale = [UIScreen mainScreen].scale;
+        CGFloat W = ceil(CGRectGetWidth(self.bounds)*scale)/scale;
+        CGFloat H = ceil(CGRectGetHeight(self.bounds)*scale)/scale;
+        CGRect rect = CGRectMake(0, 0, W, H);
+        
+        UIGraphicsBeginImageContextWithOptions(self.bounds.size, NO, scale);
+        
+        if (image) {
+            [borderImage drawInRect:rect];
+            [image drawInRect:rect];
+            image = UIGraphicsGetImageFromCurrentImageContext();
+            [self addMaskImage:image offset:0];
+        }
+        
+        if (highlightedImage) {
+            [highlightedImage drawInRect:rect];
+            highlightedImage = UIGraphicsGetImageFromCurrentImageContext();
+            [self addHighlightedMaskImage:highlightedImage offset:0];
+        }
+        
+        UIGraphicsEndImageContext();
+    }else{
+        if (image) {
+            [self addMaskImage:image offset:0];
+        }
+        if (highlightedImage) {
+            [self addHighlightedMaskImage:highlightedImage offset:0];
         }
     }
 }
@@ -232,15 +252,6 @@
     [self setHighlightedMaskView:highlightedImageView];
 }
 
-- (void)addHeartBorderMaskImage:(UIImage *)borderImage offset:(CGFloat)offset{
-    UIImageView *borderImageView = [[UIImageView alloc] init];
-    borderImageView.frame = CGRectInset(self.bounds, offset, offset);
-    borderImageView.image = borderImage;
-    [self addSubview:borderImageView];
-    [self sendSubviewToBack:borderImageView];
-    [self setHeartBorderMaskView:borderImageView];
-}
-
 - (void)setMaskView:(UIImageView *)imageView{
     objc_setAssociatedObject(self, @selector(getMaskView), imageView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
@@ -254,14 +265,6 @@
 }
 
 - (UIImageView *)getHighlightedMaskView{
-    return objc_getAssociatedObject(self, _cmd);
-}
-
-- (void)setHeartBorderMaskView:(UIImageView *)imageView{
-    objc_setAssociatedObject(self, @selector(getHeartBorderMaskView), imageView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
-- (UIImageView *)getHeartBorderMaskView{
     return objc_getAssociatedObject(self, _cmd);
 }
 
