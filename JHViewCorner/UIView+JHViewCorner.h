@@ -77,6 +77,4 @@
  */
 - (void)jh_setHeartMask:(UIColor *)color borderColor:(UIColor *)borderColor borderWidth:(CGFloat)width highlightedColor:(UIColor *)highlightedColor;
 
-@property (nonatomic,  strong,  readonly) UIImageView *jh_heartBorderMaskView;
-
 @end
