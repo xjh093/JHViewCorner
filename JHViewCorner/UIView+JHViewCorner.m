@@ -88,9 +88,7 @@
 
 - (void)jh_setHeartMask:(UIColor *)color borderColor:(UIColor *)borderColor borderWidth:(CGFloat)width highlightedColor:(UIColor *)highlightedColor{
     UIImage *image = [self heartImageWithColor:color offset:0];
-    
     UIImage *highlightedImage = [self heartImageWithColor:highlightedColor offset:0];
-    
     UIImage *borderImage;
     
     // border
@@ -133,7 +131,6 @@
 #pragma mark - private
 
 - (UIImage *)imageWithCornerRadius:(CGFloat)radius color:(UIColor *)color rectCorner:(UIRectCorner)corner borderColor:(UIColor *)borderColor borderWidth:(CGFloat)width{
-
     if (![self colorJudge:color]) {
         return nil;
     }
@@ -208,8 +205,7 @@
     return YES;
 }
 
-- (void)heartPath:(CGFloat)w offset:(CGFloat)offset rect:(UIBezierPath *)rect context:(CGContextRef)context
-{
+- (void)heartPath:(CGFloat)w offset:(CGFloat)offset rect:(UIBezierPath *)rect context:(CGContextRef)context{
     CGFloat radius = w*(7/24.0);
     CGFloat point = radius + offset;
     CGPoint leftPoint = CGPointMake(point,point);
