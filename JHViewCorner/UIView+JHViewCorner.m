@@ -43,6 +43,9 @@
 #pragma mark - public
 
 - (void)jh_setCornerRadius:(CGFloat)radius color:(UIColor *)color rectCorner:(UIRectCorner)corner highlightedColor:(UIColor *)highlightedColor{
+#if 1
+    [self jh_setCornerRadius:radius color:color rectCorner:corner borderColor:nil borderWidth:0 highlightedColor:highlightedColor];
+#else
     UIImage *image = [self imageWithCornerRadius:radius color:color rectCorner:corner borderColor:nil borderWidth:0];
     if (image) {
         [self addMaskImage:image offset:-0.3];
@@ -52,6 +55,7 @@
             [self addHighlightedMaskImage:highlightedImage offset:-0.3];
         }
     }
+#endif
 }
 
 - (void)jh_setCornerRadius:(CGFloat)radius color:(UIColor *)color rectCorner:(UIRectCorner)corner borderColor:(UIColor *)borderColor borderWidth:(CGFloat)width highlightedColor:(UIColor *)highlightedColor{
@@ -75,6 +79,9 @@
 }
 
 - (void)jh_setHeartMask:(UIColor *)color highlightedColor:(UIColor *)highlightedColor{
+#if 1
+    [self jh_setHeartMask:color borderColor:nil borderWidth:0 highlightedColor:highlightedColor];
+#else
     UIImage *image = [self heartImageWithColor:color offset:0];
     if (image) {
         [self addMaskImage:image offset:0];
@@ -84,6 +91,7 @@
             [self addHighlightedMaskImage:highlightedImage offset:0];
         }
     }
+#endif
 }
 
 - (void)jh_setHeartMask:(UIColor *)color borderColor:(UIColor *)borderColor borderWidth:(CGFloat)width highlightedColor:(UIColor *)highlightedColor{
