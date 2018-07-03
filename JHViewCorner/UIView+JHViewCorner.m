@@ -136,6 +136,22 @@
     }
 }
 
+- (void)jh_setCornerRadius:(CGFloat)radius color:(UIColor *)color rectCorner:(UIRectCorner)corner{
+    UIImage *image = [self imageWithCornerRadius:radius color:color rectCorner:corner borderColor:nil borderWidth:0];
+    
+    CGFloat offset = -0.3;
+    UIImageView *maskView = [[UIImageView alloc] init];
+    maskView.frame = CGRectInset(self.bounds, offset, offset);
+    maskView.image = image;
+    maskView.hidden = YES;
+    [self addSubview:maskView];
+    [self addMaskView:maskView];
+}
+
+- (NSArray *)jh_maskViewArray{
+    return [[self getMaskViewArray] copy];
+}
+
 #pragma mark - private
 
 - (UIImage *)imageWithCornerRadius:(CGFloat)radius color:(UIColor *)color rectCorner:(UIRectCorner)corner borderColor:(UIColor *)borderColor borderWidth:(CGFloat)width{
@@ -198,8 +214,7 @@
     return image;
 }
 
-- (BOOL)colorJudge:(UIColor *)color
-{
+- (BOOL)colorJudge:(UIColor *)color{
     if (color == nil) {
         return NO;
     }
@@ -270,6 +285,23 @@
 
 - (UIImageView *)getHighlightedMaskView{
     return objc_getAssociatedObject(self, _cmd);
+}
+
+- (void)setMaskViewArray:(NSMutableArray *)maskViewArray{
+    objc_setAssociatedObject(self, @selector(getMaskViewArray), maskViewArray, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (NSMutableArray *)getMaskViewArray{
+    return objc_getAssociatedObject(self, _cmd);
+}
+
+- (void)addMaskView:(UIImageView *)maskView{
+    NSMutableArray *marr = [self getMaskViewArray];
+    if (!marr) {
+        marr = @[].mutableCopy;
+        [self setMaskViewArray:marr];
+    }
+    [marr addObject:maskView];
 }
 
 @end
