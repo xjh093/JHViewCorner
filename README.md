@@ -60,7 +60,7 @@ you should override the blow methods:
 
 ### Can reach 60FPS!
 
-![image](https://github.com/xjh093/JHViewCorner/blob/master/JHViewCorner/Images/Jun-19-2018%2018-10-07.gif)
+![image](https://github.com/xjh093/GIF/blob/master/gif/Jun-19-2018%2018-10-07.gif)
 
 ## API
 
