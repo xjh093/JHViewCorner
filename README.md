@@ -7,7 +7,7 @@ Set view's corner with one code! & 1 行代码设置圆角
 ### 1.1.0 (2018-6-19)
 ### 1.0.0 (2018-6-15)
 
-## pod
+## Pod
 ``` pod 'JHViewCorner'```
 
 ## What is it?
