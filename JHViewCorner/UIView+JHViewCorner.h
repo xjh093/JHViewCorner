@@ -31,6 +31,8 @@
 
 @interface UIView (JHViewCorner)
 
+#pragma mark - v1.0.0
+
 /**
  This method will generate a imageView as a mask if 'color' is not nil and its alpha is 1.0.
  
@@ -48,7 +50,7 @@
  @param color normal color.
  @param corner UIRectCorner.
  @param borderColor borderColor.
- @param borderWidth borderWidth.
+ @param width borderWidth.
  @param highlightedColor highlighted Color.
  */
 - (void)jh_setCornerRadius:(CGFloat)radius color:(UIColor *)color rectCorner:(UIRectCorner)corner borderColor:(UIColor *)borderColor borderWidth:(CGFloat)width highlightedColor:(UIColor *)highlightedColor;
@@ -59,6 +61,7 @@
 /// Default is hidden.
 @property (nonatomic,  strong,  readonly) UIImageView *jh_highlightedMaskView;
 
+#pragma mark - v1.1.0
 /**
  This method will generate a heart imageView as a mask if 'color' is not nil and its alpha is 1.0.
  
@@ -67,14 +70,27 @@
  */
 - (void)jh_setHeartMask:(UIColor *)color highlightedColor:(UIColor *)highlightedColor;
 
-/** 
+/**
  This method will generate a heart imageView as a mask if 'color' is not nil and its alpha is 1.0.
  
  @param color normal color.
  @param borderColor borderColor.
- @param borderWidth borderWidth.
+ @param width borderWidth.
  @param highlightedColor highlighted Color.
  */
 - (void)jh_setHeartMask:(UIColor *)color borderColor:(UIColor *)borderColor borderWidth:(CGFloat)width highlightedColor:(UIColor *)highlightedColor;
+
+#pragma mark - v1.2.0
+/**
+ This method will generate a imageView as a mask if 'color' is not nil and its alpha is 1.0.
+ The generate imageView is added in 'jh_maskViewArray'. All objects is hidden.
+ 
+ @param radius radius.
+ @param color normal color.
+ @param corner UIRectCorner.
+ */
+- (void)jh_setCornerRadius:(CGFloat)radius color:(UIColor *)color rectCorner:(UIRectCorner)corner;
+
+@property (nonatomic,  strong,  readonly) NSArray *jh_maskViewArray;
 
 @end
