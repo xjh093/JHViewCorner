@@ -42,6 +42,8 @@ you should override the blow methods:
 
 ## Logs:
 
+#### 6.add property 'jh_maskViewArray'.(2018-7-3)
+
 #### 5.remove property 'jh_heartBorderMaskView'. (2018-6-19)
 
 #### 4.add heart border mask. (2018-6-15)
