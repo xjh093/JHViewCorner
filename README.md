@@ -65,7 +65,7 @@ you should override the blow methods:
 ```
 @interface UIView (JHViewCorner)
 
-
+#pragma mark - v1.0.0
 - (void)jh_setCornerRadius:(CGFloat)radius color:(UIColor *)color rectCorner:(UIRectCorner)corner highlightedColor:(UIColor *)highlightedColor;
 
 - (void)jh_setCornerRadius:(CGFloat)radius color:(UIColor *)color rectCorner:(UIRectCorner)corner borderColor:(UIColor *)borderColor borderWidth:(CGFloat)width highlightedColor:(UIColor *)highlightedColor;
@@ -75,9 +75,15 @@ you should override the blow methods:
 /// Default is hidden.
 @property (nonatomic,  strong,  readonly) UIImageView *jh_highlightedMaskView;
 
+#pragma mark - v1.1.0
 - (void)jh_setHeartMask:(UIColor *)color highlightedColor:(UIColor *)highlightedColor;
 
 - (void)jh_setHeartMask:(UIColor *)color borderColor:(UIColor *)borderColor borderWidth:(CGFloat)width highlightedColor:(UIColor *)highlightedColor;
+
+#pragma mark - v1.2.0
+- (void)jh_setCornerRadius:(CGFloat)radius color:(UIColor *)color rectCorner:(UIRectCorner)corner;
+
+@property (nonatomic,  strong,  readonly) NSArray *jh_maskViewArray;
 
 @end
 ```
