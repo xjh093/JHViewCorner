@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
   s.authors      = { 'Haocold' => 'xjh093@126.com' }
   s.homepage     = 'https://github.com/xjh093/JHViewCorner'
 
-  s.platform     = :ios, "8.0"
+  s.ios.deployment_target = '8.0'
 
   s.source       = { :git => 'https://github.com/xjh093/JHViewCorner.git', :tag => s.version}
   
