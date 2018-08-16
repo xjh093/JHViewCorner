@@ -12,9 +12,9 @@ Set view's corner with one code! & 1 行代码设置圆角
 
 ## What is it?
 
-![image](https://github.com/xjh093/UIView-JHViewCorner/blob/master/JHViewCorner/Images/image1.png)
+![image](https://github.com/xjh093/UIView-JHViewCorner/blob/master/Images/image1.png)
 
-![image](https://github.com/xjh093/UIView-JHViewCorner/blob/master/JHViewCorner/Images/image2.png)
+![image](https://github.com/xjh093/UIView-JHViewCorner/blob/master/Images/image2.png)
 
 ## Notice
 
@@ -97,29 +97,29 @@ you should override the blow methods:
 ## Something About More
 ## CGPathDrawingMode
 
-![image](https://github.com/xjh093/UIView-JHViewCorner/blob/master/JHViewCorner/Images/%E5%9C%86%E8%A7%92.png)
+![image](https://github.com/xjh093/UIView-JHViewCorner/blob/master/Images/%E5%9C%86%E8%A7%92.png)
 
 ## BorderColor & BorderWidth
 
-![image](https://github.com/xjh093/UIView-JHViewCorner/blob/master/JHViewCorner/Images/%E8%BE%B9%E6%A1%86.png)
+![image](https://github.com/xjh093/UIView-JHViewCorner/blob/master/Images/%E8%BE%B9%E6%A1%86.png)
 
 # More Details
 
 Not Good!🤔
 
-![image](https://github.com/xjh093/UIView-JHViewCorner/blob/master/JHViewCorner/Images/002.png)
+![image](https://github.com/xjh093/UIView-JHViewCorner/blob/master/Images/002.png)
 
 Not Good!🤔
 
-![image](https://github.com/xjh093/UIView-JHViewCorner/blob/master/JHViewCorner/Images/001.png)
+![image](https://github.com/xjh093/UIView-JHViewCorner/blob/master/Images/001.png)
 
 Not Good!🤔
 
-![image](https://github.com/xjh093/UIView-JHViewCorner/blob/master/JHViewCorner/Images/004.png)
+![image](https://github.com/xjh093/UIView-JHViewCorner/blob/master/Images/004.png)
 
 Good!👍👍👍
 
-![image](https://github.com/xjh093/UIView-JHViewCorner/blob/master/JHViewCorner/Images/003.png)
+![image](https://github.com/xjh093/UIView-JHViewCorner/blob/master/Images/003.png)
 
 
 
