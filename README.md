@@ -3,6 +3,8 @@ Set view's corner with one code! & 1 行代码设置圆角
 
 ## Version 
 [Release](https://github.com/xjh093/JHViewCorner/releases)
+
+### 1.2.2 (2018-8-16)
 ### 1.2.0 (2018-7-3)
 ### 1.1.0 (2018-6-19)
 ### 1.0.0 (2018-6-15)
