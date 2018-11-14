@@ -38,7 +38,13 @@
 
 // kCGPathEOFill 比 kCGPathEOFillStroke 的半径要大一点
 
+static CGFloat _padding;
+
 @implementation UIView (JHViewCorner)
+
++ (void)initialize{
+    _padding = 1.0/[UIScreen mainScreen].scale;
+}
 
 #pragma mark - public
 
@@ -48,11 +54,11 @@
 #else
     UIImage *image = [self imageWithCornerRadius:radius color:color rectCorner:corner borderColor:nil borderWidth:0];
     if (image) {
-        [self addMaskImage:image offset:-0.3];
+        [self addMaskImage:image offset:-_padding];
 
         UIImage *highlightedImage = [self imageWithCornerRadius:radius color:highlightedColor rectCorner:corner borderColor:nil borderWidth:0];
         if (highlightedImage) {
-            [self addHighlightedMaskImage:highlightedImage offset:-0.3];
+            [self addHighlightedMaskImage:highlightedImage offset:-_padding];
         }
     }
 #endif
@@ -61,12 +67,12 @@
 - (void)jh_setCornerRadius:(CGFloat)radius color:(UIColor *)color rectCorner:(UIRectCorner)corner borderColor:(UIColor *)borderColor borderWidth:(CGFloat)width highlightedColor:(UIColor *)highlightedColor{
     UIImage *image = [self imageWithCornerRadius:radius color:color rectCorner:corner borderColor:borderColor borderWidth:width];
     if (image) {
-        [self addMaskImage:image offset:-0.3];
+        [self addMaskImage:image offset:-_padding];
     }
     
     UIImage *highlightedImage = [self imageWithCornerRadius:radius color:highlightedColor rectCorner:corner borderColor:borderColor borderWidth:width];
     if (highlightedImage) {
-        [self addHighlightedMaskImage:highlightedImage offset:-0.3];
+        [self addHighlightedMaskImage:highlightedImage offset:-_padding];
     }
 }
 
@@ -139,7 +145,7 @@
 - (void)jh_setCornerRadius:(CGFloat)radius color:(UIColor *)color rectCorner:(UIRectCorner)corner{
     UIImage *image = [self imageWithCornerRadius:radius color:color rectCorner:corner borderColor:nil borderWidth:0];
     
-    CGFloat offset = -0.3;
+    CGFloat offset = -_padding;
     UIImageView *maskView = [[UIImageView alloc] init];
     maskView.frame = CGRectInset(self.bounds, offset, offset);
     maskView.image = image;
@@ -166,8 +172,8 @@
     [color set];
     
     // let rect a little big than bounds.
-    CGRect bigRect = CGRectInset(bounds, -0.3, -0.3);
-    CGRect smallRect = CGRectInset(bounds, 0.3, 0.3);
+    CGRect bigRect = CGRectInset(bounds, -_padding, -_padding);
+    CGRect smallRect = CGRectInset(bounds, _padding, _padding);
     UIBezierPath *rect = [UIBezierPath bezierPathWithRect:bigRect];
     UIBezierPath *round = [UIBezierPath bezierPathWithRoundedRect:smallRect byRoundingCorners:corner cornerRadii:CGSizeMake(radius, radius)];
     [rect appendPath:round];
