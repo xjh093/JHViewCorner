@@ -10,8 +10,8 @@ Latest release version:
 
 ---
 
-# Pod
-``` pod 'JHViewCorner'```
+# Cocoapods
+`pod "JHViewCorner"`
 
 ---
 
@@ -22,6 +22,31 @@ Latest release version:
 ![image](https://github.com/xjh093/UIView-JHViewCorner/blob/master/Images/image2.png)
 
 ---
+
+# Logs:
+### 2018-11-14
+- fix a small bugs.
+
+### 2018-7-3
+- add property 'jh_maskViewArray'.
+
+### 2018-6-19
+- remove property 'jh_heartBorderMaskView'.
+
+### 2018-6-15
+- add heart border mask.
+
+### 2018-5-25
+- add heart mask.
+
+### 2018-5-8
+- update.
+
+#### 2018-5-7
+- upload.
+
+---
+
 
 # Notice
 
@@ -51,22 +76,6 @@ you should override the blow methods:
 
 ```
 
-## Logs:
-
-#### 7.fix a small bugs.(2018-11-14)
-
-#### 6.add property 'jh_maskViewArray'.(2018-7-3)
-
-#### 5.remove property 'jh_heartBorderMaskView'. (2018-6-19)
-
-#### 4.add heart border mask. (2018-6-15)
-
-#### 3.add heart mask. (2018-5-25)
-
-#### 2.update. (2018-5-8)
-
-#### 1.upload. (2018-5-7)
-
 ---
 
 ## GIF
@@ -75,35 +84,9 @@ you should override the blow methods:
 
 ![image](https://github.com/xjh093/GIF/blob/master/gif/Jun-19-2018%2018-10-07.gif)
 
-## API
+---
 
-```
-@interface UIView (JHViewCorner)
-
-#pragma mark - v1.0.0
-- (void)jh_setCornerRadius:(CGFloat)radius color:(UIColor *)color rectCorner:(UIRectCorner)corner highlightedColor:(UIColor *)highlightedColor;
-
-- (void)jh_setCornerRadius:(CGFloat)radius color:(UIColor *)color rectCorner:(UIRectCorner)corner borderColor:(UIColor *)borderColor borderWidth:(CGFloat)width highlightedColor:(UIColor *)highlightedColor;
-
-@property (nonatomic,  strong,  readonly) UIImageView *jh_maskView;
-
-/// Default is hidden.
-@property (nonatomic,  strong,  readonly) UIImageView *jh_highlightedMaskView;
-
-#pragma mark - v1.1.0
-- (void)jh_setHeartMask:(UIColor *)color highlightedColor:(UIColor *)highlightedColor;
-
-- (void)jh_setHeartMask:(UIColor *)color borderColor:(UIColor *)borderColor borderWidth:(CGFloat)width highlightedColor:(UIColor *)highlightedColor;
-
-#pragma mark - v1.2.0
-- (void)jh_setCornerRadius:(CGFloat)radius color:(UIColor *)color rectCorner:(UIRectCorner)corner;
-
-@property (nonatomic,  strong,  readonly) NSArray *jh_maskViewArray;
-
-@end
-```
-
-## Something About More
+# More
 ## CGPathDrawingMode
 
 ![image](https://github.com/xjh093/UIView-JHViewCorner/blob/master/Images/%E5%9C%86%E8%A7%92.png)
@@ -112,7 +95,7 @@ you should override the blow methods:
 
 ![image](https://github.com/xjh093/UIView-JHViewCorner/blob/master/Images/%E8%BE%B9%E6%A1%86.png)
 
-# More Details
+## More Details
 
 Not Good!🤔
 
