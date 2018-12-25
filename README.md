@@ -23,30 +23,6 @@ Latest release version:
 
 ---
 
-# Logs
-### 2018-11-14
-- fix a small bugs.
-
-### 2018-7-3
-- add property 'jh_maskViewArray'.
-
-### 2018-6-19
-- remove property 'jh_heartBorderMaskView'.
-
-### 2018-6-15
-- add heart border mask.
-
-### 2018-5-25
-- add heart mask.
-
-### 2018-5-8
-- update.
-
-#### 2018-5-7
-- upload.
-
----
-
 # Usage
 ```
 // corner
@@ -76,6 +52,29 @@ Latest release version:
 ```
 ---
 
+# Logs
+### 2018-11-14
+- fix a small bugs.
+
+### 2018-7-3
+- add property 'jh_maskViewArray'.
+
+### 2018-6-19
+- remove property 'jh_heartBorderMaskView'.
+
+### 2018-6-15
+- add heart border mask.
+
+### 2018-5-25
+- add heart mask.
+
+### 2018-5-8
+- update.
+
+#### 2018-5-7
+- upload.
+
+---
 
 # Notice
 
