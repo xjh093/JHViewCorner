@@ -1,25 +1,29 @@
-# UIView-JHViewCorner
-Set view's corner with one code! & 1 行代码设置圆角
+# JHViewCorner
+Set view's corner with one code! 
+- 1 行代码设置圆角
 
-## Version 
-[Release](https://github.com/xjh093/JHViewCorner/releases)
+---
 
-### 1.2.3 (2018-11-14)
-### 1.2.2 (2018-8-16)
-### 1.2.0 (2018-7-3)
-### 1.1.0 (2018-6-19)
-### 1.0.0 (2018-6-15)
+# Version 
+Latest release version:
+- [1.2.3](https://github.com/xjh093/JHViewCorner/releases)
 
-## Pod
+---
+
+# Pod
 ``` pod 'JHViewCorner'```
 
-## What is it?
+---
+
+# What
 
 ![image](https://github.com/xjh093/UIView-JHViewCorner/blob/master/Images/image1.png)
 
 ![image](https://github.com/xjh093/UIView-JHViewCorner/blob/master/Images/image2.png)
 
-## Notice
+---
+
+# Notice
 
 If you use it in "UITableViewCell"
 
