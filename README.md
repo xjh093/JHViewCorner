@@ -23,7 +23,7 @@ Latest release version:
 
 ---
 
-# Logs:
+# Logs
 ### 2018-11-14
 - fix a small bugs.
 
@@ -45,6 +45,35 @@ Latest release version:
 #### 2018-5-7
 - upload.
 
+---
+
+# Usage
+```
+// corner
+[_imageView jh_setCornerRadius:H*0.5
+                         color:self.superview.backgroundColor
+                    rectCorner:UIRectCornerAllCorners
+              highlightedColor:nil];
+
+// corner and border
+[_imageView jh_setCornerRadius:H*0.5
+                         color:self.superview.backgroundColor
+                    rectCorner:UIRectCornerAllCorners
+                    borderColor:borderColor 
+                    borderWidth:width
+              highlightedColor:nil];
+
+// heart
+[_imageView jh_setHeartMask:color 
+           highlightedColor:highlightedColor];
+           
+// heart and border
+[_imageView jh_setHeartMask:color 
+                borderColor:borderColor 
+                borderWidth:width 
+           highlightedColor:highlightedColor];
+
+```
 ---
 
 
