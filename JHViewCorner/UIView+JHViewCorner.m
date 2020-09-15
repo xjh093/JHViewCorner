@@ -77,7 +77,7 @@ static CGFloat _padding;
 }
 
 - (UIImageView *)jh_maskView{
-    return [self getMaskView];
+    return [self getImageMaskView];
 }
 
 - (UIImageView *)jh_highlightedMaskView{
@@ -265,7 +265,7 @@ static CGFloat _padding;
     maskView.frame = CGRectInset(self.bounds, offset, offset);
     maskView.image = image;
     [self addSubview:maskView];
-    [self setMaskView:maskView];
+    [self setImageMaskView:maskView];
 }
 
 - (void)addHighlightedMaskImage:(UIImage *)highlightedImage offset:(CGFloat)offset{
@@ -277,11 +277,11 @@ static CGFloat _padding;
     [self setHighlightedMaskView:highlightedImageView];
 }
 
-- (void)setMaskView:(UIImageView *)imageView{
-    objc_setAssociatedObject(self, @selector(getMaskView), imageView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+- (void)setImageMaskView:(UIImageView *)imageView{
+    objc_setAssociatedObject(self, @selector(getImageMaskView), imageView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (UIImageView *)getMaskView{
+- (UIImageView *)getImageMaskView{
     return objc_getAssociatedObject(self, _cmd);
 }
 
