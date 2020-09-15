@@ -6,7 +6,7 @@ Set view's corner with one code!
 
 # Version 
 Latest release version:
-- [1.2.3](https://github.com/xjh093/JHViewCorner/releases)
+- [1.2.4](https://github.com/xjh093/JHViewCorner/releases)
 
 ---
 
@@ -53,6 +53,9 @@ Latest release version:
 ---
 
 # Logs
+### 2020-09-15
+- fix a small bugs.
+
 ### 2018-11-14
 - fix a small bugs.
 
