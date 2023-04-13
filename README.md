@@ -5,8 +5,8 @@ Set view's corner with one code!
 ---
 
 # Version 
-Latest release version:
-- [1.2.4](https://github.com/xjh093/JHViewCorner/releases)
+Latest version:
+- master branch
 
 ---
 
