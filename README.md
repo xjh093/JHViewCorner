@@ -53,6 +53,9 @@ Latest release version:
 ---
 
 # Logs
+### 2023-4-13
+- fix bug in iOS16.
+
 ### 2020-09-15
 - fix a small bugs.
 
